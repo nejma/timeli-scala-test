@@ -1,3 +1,5 @@
 # Timeli Scala Test
 
 Fork this repo and compile the code so that the unit test passes, use the editor/IDE of your choice 
+
+Then generate a PR to show your answers to us
