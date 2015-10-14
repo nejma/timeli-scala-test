@@ -11,17 +11,17 @@ import org.scalatest.junit.JUnitRunner
 class FibonacciTest extends FunSuite {
 
   test("Fibonacci and Prime") {
-
     val sc = new Scala()
 
     // generate a list of the first 80 Fibonacci numbers
     val fibs = sc.fibonacci(80)
     fibs should have size 80
+
     fibs.take(10) should be(List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34))
 
     // split that list of fibonacci numbers into a list of 
     // even numbers and a list of odd numbers
-    val (evens, odds) = sc.split(fibs, ???)
+    val (evens, odds) = sc.split(fibs, ( (x: Long) => (x % 2 == 0) ))
     evens should have size 27
     odds should have size 53
     evens.take(5) should be(List(0, 2, 8, 34, 144))
@@ -36,8 +36,8 @@ class FibonacciTest extends FunSuite {
     // primes and fibonacci numbers and print them to the console 
     val fibPrimes = sc.fibPrimes(fibs, primes)
     fibPrimes should be(List(2, 3, 5, 13, 89, 233, 1597))
-    
-    ???
+  
+    info("All tests passed!")
   }
 
 }
